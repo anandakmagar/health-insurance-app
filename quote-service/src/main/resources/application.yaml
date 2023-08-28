@@ -1,0 +1,42 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8081
+spring:
+  application:
+    name: quote-service
+  datasource:
+    initialization-mode: always
+    password: rootroot
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/quote_management
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        format_sql: true
+    show: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      group-id: policyId
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.quoteservice.event
+            type:
+              mapping: event:com.quoteservice.event.QuoteAcceptedEvent
+          serializer:
+            value:
+              delegate:
+                class: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+      default-topic: policyTopic

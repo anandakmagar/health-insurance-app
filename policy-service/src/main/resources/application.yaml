@@ -1,0 +1,46 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#server:
+#  port: 8082
+#spring:
+#  application:
+#    name: policy-service
+#  datasource:
+#    initialization-mode: always
+#    password: rootroot
+#    platform: mysql
+#    url: jdbc:mysql://localhost:3306/policy_management
+#    username: root
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        enable_lazy_load_no_trans: true
+#        format_sql: true
+#    show: true
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    consumer:
+#      group-id: policyId
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      properties:
+#        spring:
+#          deserializer:
+#            value:
+#              delegate:
+#                class: org.springframework.kafka.support.serializer.JsonDeserializer
+#          json:
+#            trusted:
+#              packages: com.policyservice.event
+#            type:
+#              mapping: event:com.policyservice.event.QuoteAcceptedEvent
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#    template:
+#      default-topic: policyTopic

@@ -1,0 +1,56 @@
+
+spring:
+  application:
+    name: api-gateway
+
+  ## Gateway configurations
+  cloud:
+    gateway:
+      routes:
+        ## user-service
+#        - id: user-service
+#          uri: lb://user-service
+#          predicates:
+#            - Path=/user-service/**
+#          filters:
+#            - StripPrefix=1
+
+        ## policy-service
+        - id: policy-service
+          uri: lb://policy-service
+          predicates:
+            - Path=/policy-service/**
+          filters:
+            - StripPrefix=1
+
+        ## quote-service
+        - id: quote-service
+          uri: lb://quote-service
+          predicates:
+            - Path=/quote-service/**
+          filters:
+            - StripPrefix=1
+
+        ## notification-service
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/notification-service/**
+          filters:
+            - StripPrefix=1
+
+        ## notification-service
+        - id: security-service
+          uri: lb://security-service
+          predicates:
+            - Path=/security-service/**
+          filters:
+            - StripPrefix=1
+
+server:
+  port: 8092
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
