@@ -58,4 +58,5 @@ This project is a microservices-based health insurance application system. It al
 
 ## Docker File for Kafka
 - Command to run: docker compose up -d
+- Command to stop and remove the containers: docker compose down
 - Check whether Kafka broker and Zookeeper running: docker ps
