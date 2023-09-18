@@ -1,7 +1,7 @@
-# Microservices Architecture for Insurance Policy Management
+# Health Insurance Application Using Microservices Architecture
 ## Overview
 
-This project is a microservices-based insurance policy management system. It allows users to check insurance quotes, accept quotes, create policies, and send notifications. The application is built using Java, Spring Boot, and follows microservices architecture principles. It leverages technologies such as MySQL and Kafka for seamless communication between services.
+This project is a microservices-based health insurance application system. It allows users to check insurance quotes, accept quotes, create policies, and send notifications. The application is built using Java, Spring Boot, and follows microservices architecture principles. It leverages technologies such as MySQL and Kafka for seamless communication between services.
 
 ## Microservices
 
