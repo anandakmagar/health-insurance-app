@@ -23,7 +23,7 @@ This project is a microservices-based health insurance application system. It al
 
 5. **policy-service:**
     - Create insurance policies
-    - Acceptance of quotes restricted to ADMIN
+    - Acceptance of quotes, only ADMIN allowed
 
 6. **notification-service:**
     - Send notifications, such as email, when a quote is accepted
