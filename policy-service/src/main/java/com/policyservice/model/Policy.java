@@ -18,6 +18,7 @@ public class Policy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String policyNumber;
     private String name;
     private String phone;

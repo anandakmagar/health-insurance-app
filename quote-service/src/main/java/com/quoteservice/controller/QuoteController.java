@@ -5,6 +5,8 @@ import com.quoteservice.service.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -14,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 public class QuoteController {
     @Autowired
     private QuoteService quoteService;
-    @PostMapping
+    @PostMapping("/check")
     public CompletableFuture<ResponseEntity<QuoteDto>> generateQuote(@RequestBody QuoteDto quoteDto) {
         return quoteService.generateQuote(quoteDto)
                 .thenApply(ResponseEntity::ok);
@@ -30,7 +32,5 @@ public class QuoteController {
     public ResponseEntity<Optional<QuoteDto>> getQuoteById(@PathVariable Long id){
         Optional<QuoteDto> quoteDto = quoteService.getQuoteById(id);
         return ResponseEntity.ok(quoteDto);
-
     }
-
 }

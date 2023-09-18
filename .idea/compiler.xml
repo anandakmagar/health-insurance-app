@@ -10,8 +10,8 @@
         <module name="policy-service" />
         <module name="security-service" />
         <module name="api-gateway" />
-        <module name="quote-service" />
         <module name="user-service" />
+        <module name="quote-service" />
         <module name="notification-service" />
         <module name="service-registry" />
       </profile>

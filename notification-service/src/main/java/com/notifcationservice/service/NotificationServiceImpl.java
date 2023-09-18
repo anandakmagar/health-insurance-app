@@ -41,14 +41,4 @@ public class NotificationServiceImpl implements NotificationService {
 
         saveNotification(notificationDto);
     }
-//    @Override
-//    public void sendEmail(String recipient, String subject, String body) {
-//        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-//        simpleMailMessage.setTo(recipient);
-//        simpleMailMessage.setSubject(subject);
-//        simpleMailMessage.setText(body);
-//
-//        javaMailSender.send(simpleMailMessage);
-//        System.out.println("Email notifcation sent to " + recipient);
-//    }
 }

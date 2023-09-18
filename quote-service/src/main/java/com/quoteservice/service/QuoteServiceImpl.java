@@ -160,18 +160,18 @@ public class QuoteServiceImpl implements QuoteService {
         return CompletableFuture.completedFuture(mapToDto(savedQuote));
     }
 
-    @Override
-    public String acceptQuote(Long id) {
-        if (quoteRepository.findById(id).isPresent()) {
-            Quote quote = quoteRepository.findById(id).get();
-            quote.setQuoteAcceptance(true);
-            quoteRepository.save(quote);
-            kafkaTemplate.send("policyTopic", new QuoteAcceptedEvent(quote.getId()));
-            return "Quote with ID " + id + " has been accepted.";
-        } else {
-            return "Quote with ID " + id + " not found.";
-        }
-    }
+//    @Override
+//    public String acceptQuote(Long id) {
+//        if (quoteRepository.findById(id).isPresent()) {
+//            Quote quote = quoteRepository.findById(id).get();
+//            quote.setQuoteAcceptance(true);
+//            quoteRepository.save(quote);
+//            kafkaTemplate.send("policyTopic", new QuoteAcceptedEvent(quote.getId()));
+//            return "Quote with ID " + id + " has been accepted.";
+//        } else {
+//            return "Quote with ID " + id + " not found.";
+//        }
+//    }
 
     @Override
     public Optional<QuoteDto> getQuoteById(Long id){
@@ -182,4 +182,33 @@ public class QuoteServiceImpl implements QuoteService {
         }
         return null;
     }
+
+
+
+
+
+
+
+
+
+    @Override
+    public String acceptQuote(Long id) {
+        if (quoteRepository.findById(id).isPresent()) {
+            Quote quote = quoteRepository.findById(id).get();
+            quote.setQuoteAcceptance(true);
+            quoteRepository.save(quote);
+            kafkaTemplate.send("policyTopic", new QuoteAcceptedEvent(quote.getId()));
+            kafkaTemplate.send("userTopic", new QuoteAcceptedEvent(quote.getId()));
+            return "Quote with ID " + id + " has been accepted and the user profile has been auto-created.";
+        } else {
+            return "Quote with ID " + id + " not found.";
+        }
+    }
+
+
+
+
+
+
+
 }
