@@ -37,7 +37,7 @@ spring:
             trusted:
               packages: com.securityservice.event
             type:
-              mapping: event:com.securityservice.event.QuoteAcceptedEvent
+              mapping: event:com.securityservice.quote.QuoteAcceptedEvent
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
     template:
       default-topic: userTopic

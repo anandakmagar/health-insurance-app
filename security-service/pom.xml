@@ -11,6 +11,7 @@
 	<groupId>com.security-service</groupId>
 	<artifactId>security-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>security-service</name>
 	<description>Security Project</description>
 	<properties>

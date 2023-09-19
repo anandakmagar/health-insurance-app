@@ -55,6 +55,7 @@ This project is a microservices-based health insurance application system. It al
 - **Authenticate user:** `POST` (Anyone) - `localhost:8092/security-service/api/auth/authenticate`
 - **Password reset code:** `POST` (Anyone) - `localhost:8092/security-service/api/auth/password-reset/{username}`
 - **Change password:** `POST` (Anyone) - `localhost:8092/security-service/api/auth/password-change/{resetCode}/{username}/{newPassword}`
+- **Logout:** `POST` (Singned in user) - `localhost:8092/security-service/api/auth/logout`
 
 ## Docker File for Kafka
 - Command to run: docker compose up -d

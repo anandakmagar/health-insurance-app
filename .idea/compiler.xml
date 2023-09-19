@@ -12,12 +12,13 @@
         <module name="api-gateway" />
         <module name="user-service" />
         <module name="quote-service" />
-        <module name="notification-service" />
         <module name="service-registry" />
+        <module name="notification-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="17" />
+      <module name="health-insurance" target="1.5" />
       <module name="notification-service" target="17" />
       <module name="policy-service" target="17" />
       <module name="quote-service" target="17" />
