@@ -18,6 +18,7 @@ This project is a microservices-based health insurance application system. It al
 
 4. **security-service:**
     - User authentication and authorization using JWT tokens
+    - Logout functionality
     - Method-level security for roles (ADMIN, CUSTOMER)
     - Password reset and change functionality
 
